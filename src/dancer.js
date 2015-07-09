@@ -40,3 +40,17 @@ Dancer.prototype.onMouseMove = function(){
     $(this).finish();
   });
 };
+
+Dancer.prototype.goSomewhere = function(top, left, height, width){
+  this.$node.animate({
+    'top': top,
+    'left': left,
+    'height': height,
+    'width': width
+  }, 5000);
+};
+
+Dancer.prototype.interact = function(){
+  
+};
+

@@ -45,6 +45,39 @@ $(document).ready(function(){
 
   //   });
   // }); 
+  $(".interactButton").on("click", function(event){
+    var interact = function(){
+      var min = Infinity;
+      var firstDancer;
+      var secondDancer;
+      window.dancers.forEach(function(dancer){
+        window.dancers.forEach(function(otherDancer){
+          if(dancer !== otherDancer){
+            var firstTop = dancer.$node.position().top;
+            var firstLeft = dancer.$node.position().left;
+            var secondTop = otherDancer.$node.position().top;
+            var secondLeft = otherDancer.$node.position().left;
+            
+            var closest = distance(firstTop,firstLeft,secondTop,secondLeft);
+
+            if(min > closest){
+              min = closest;
+              firstDancer = dancer;
+              secondDancer = otherDancer;
+            }
+          }
+        });
+      });
+      var tempDancerPosition = firstDancer.$node.position();
+      firstDancer.$node.css({top:secondDancer.$node.position().top, left: secondDancer.$node.position().left});
+      secondDancer.$node.css({top:tempDancerPosition.top, left: tempDancerPosition.left});
+    };
+    interact();
+  }); 
+
+  var distance = function(firstTop, firstLeft, secondTop, secondLeft){
+    return Math.sqrt(Math.pow((secondTop - firstTop), 2) + Math.pow((secondLeft - firstLeft), 2));
+  }
  
 });
 
