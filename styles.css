@@ -25,3 +25,15 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.square{
+  border:10px solid green;
+  position:absolute;
+}
+.image-dancer{
+  content: url("img/banana.gif");
+  position: absolute;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+ 
+}
