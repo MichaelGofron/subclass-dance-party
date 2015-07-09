@@ -1,15 +1,19 @@
 body, html{
-  height:600px;
-  width: 920px;
+background: url("img/Final_Destination.png") no-repeat center center fixed;
+background-size: cover;
+overflow: none;
+height: 100%;
 }
 body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
+
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
@@ -20,6 +24,9 @@ body, a:link, a:visited, a:active{
 }
 .title{
   background-color: #777;
+}
+.container {
+  height: 90%;
 }
 .dancer{
   border:10px solid red;
